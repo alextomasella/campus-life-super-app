@@ -1,5 +1,4 @@
-"<!--Incomplete API for event retrieval-->"
-
+// Incomplete API for event retrieval
 let endpoint = "https://www.eventbriteapi.com/v3/users/me/?token=5A56SHW7FQLTMQX455BV";
 console.log(endpoint);
 

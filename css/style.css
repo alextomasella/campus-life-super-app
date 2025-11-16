@@ -1,0 +1,57 @@
+/* styles for Campus Life Super App */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f83e;
+  color: #212529;
+}
+
+header {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+h1, h2, h3 {
+  color: #004080;
+  font-weight: 600;
+}
+
+
+p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+/* link styling */
+a.fw-semibold {
+  color: #004080;
+  transition: color 0.2s ease;
+}
+
+a.fw-semibold:hover {
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+
+/* styling for API Button */
+.btn-primary {
+  background-color: #800000;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #003366;
+}
+
+/* container styling */
+.container {
+  background-color: #ffffff;
+  padding: 40px;
+}
