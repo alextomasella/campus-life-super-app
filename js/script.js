@@ -1,23 +1,39 @@
-// Incomplete API for event retrieval
-let endpoint = "https://www.eventbriteapi.com/v3/users/me/?token=5A56SHW7FQLTMQX455BV";
-console.log(endpoint);
+// API for current weather in Liberty, MO
+let endpoint = "https://api.open-meteo.com/v1/forecast?latitude=39.25&longitude=-94.42&current_weather=true";
+
 
 async function getEvents() {
     const response = await fetch(endpoint);
-    const data = await response.json();
-    const images = data.data.map(gif => gif.images.original.url);
-    console.log(images);
+    console.log("Response status:", response.status);
 
-    const output = document.getElementById("gif-container");
+    const data = await response.json();
+    console.log("Raw data:", data);
+
+    // Extract current temp
+    const temp = data.current_weather?.temperature;
+
+    const output = document.getElementById("weather-container");
+    if (!output) return;
+
+    // Clear container
     output.innerHTML = "";
 
-    for (let url of images) {
-        output.innerHTML += `<img src="${url}" class="col-3 mb-3">`;
-    }
+    // Show current temp
+    output.innerHTML = `
+        <div class="p-3 border rounded">
+            <h3>The current temperature is:</h3>
+            <p class="display-4">${temp}°C</p>
+        </div>
+    `;
 }
 
-const button = document.querySelector("#see-events-btn");
-const eventsContainer = document.querySelector("#events-container");
-button.addEventListener("click", function() {
-    getEvents();
-});
+const button = document.querySelector("#weather-btn");
+const weatherContainer = document.getElementById("weather-container");
+
+if (button && weatherContainer) {
+    button.addEventListener("click", function () {
+        console.log("What's the weather like?");
+        getEvents();
+    });
+}
+
