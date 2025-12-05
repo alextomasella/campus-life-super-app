@@ -1,6 +1,6 @@
 /* styles for Campus Life Super App */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
   background-color: #f4f6f83e;
   color: #212529;
 }
@@ -39,7 +39,7 @@ a.fw-semibold:hover {
 
 /* styling for API Button */
 .btn-primary {
-  background-color: #800000;
+  background-color: #003366;
   border: none;
   padding: 10px 20px;
   font-weight: 500;
@@ -54,4 +54,19 @@ a.fw-semibold:hover {
 .container {
   background-color: #ffffff;
   padding: 40px;
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #weather-btn {
+    width: 100%;
+  }
 }
